@@ -1,0 +1,39 @@
+{
+    "name": "@d-gs/zipcode-jp-api",
+    "version": "0.1.2",
+    "description": "ZipcodeJp API.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "author": "__d",
+    "license": "MIT",
+    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/glamseam/zipcode-jp-api.git"
+    },
+    "bugs": {
+        "url": "https://github.com/glamseam/zipcode-jp-api/issues"
+    },
+    "scripts": {
+        "prebuild": "rimraf ./dist",
+        "build": "tsc",
+        "pub": "npm run build && npm publish --access=public"
+    },
+    "peerDependencies": {
+        "axios": "^0.24.0",
+        "vue": "^3.2.0"
+    },
+    "devDependencies": {
+        "@d-gs/eslint-config": "^0.1.10",
+        "eslint": "^8.4.1",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.5.2",
+        "vue": "^3.2.24"
+    },
+    "dependencies": {
+        "axios": "^0.24.0"
+    }
+}
