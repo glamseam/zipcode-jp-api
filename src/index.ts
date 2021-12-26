@@ -37,8 +37,6 @@ export const getAddressesOfZipCode = (
         { baseURL: baseUrl }
     )
         .then((response) => {
-            console.log('getAddressesOfZipCode', response)
-
             if (response.data[0]) {
                 return Promise.resolve({
                     address: {
@@ -58,8 +56,6 @@ export const getAddressesOfZipCode = (
             return Promise.resolve(undefined)
         })
         .catch((error: AxiosError) => {
-            console.log('getAddressesOfZipCodeError', error.response)
-
             return Promise.reject(error)
         })
 }
@@ -70,13 +66,9 @@ export const getPrefectures = ({ baseUrl = '' }: Options = {}) => {
         { baseURL: baseUrl }
     )
         .then((response) => {
-            console.log('getPrefectures', response)
-
             return Promise.resolve(response)
         })
         .catch((error: AxiosError) => {
-            console.log('getPrefecturesError', error.response)
-
             return Promise.reject(error)
         })
 }
@@ -92,13 +84,9 @@ export const getCitiesOfPrefecture = (
         { baseURL: baseUrl }
     )
         .then((response) => {
-            console.log('getCitiesOfPrefecture', response)
-
             return Promise.resolve(response)
         })
         .catch((error: AxiosError) => {
-            console.log('getCitiesOfPrefectureError', error.response)
-
             return Promise.reject(error)
         })
 }
@@ -115,13 +103,9 @@ export const getTownsOfCity = (
         { baseURL: baseUrl }
     )
         .then((response) => {
-            console.log('getTownsOfCity', response)
-
             return Promise.resolve(response)
         })
         .catch((error: AxiosError) => {
-            console.log('getTownsOfCityError', error.response)
-
             return Promise.reject(error)
         })
 }
@@ -135,13 +119,10 @@ export const getCity = (
     return getCitiesOfPrefecture(prefectureJisCode, { baseUrl })
         .then((response) => {
             const city = response.data.find((city) => city.city_jis_code === cityJisCode)
-            console.log('getCity', city)
 
             return Promise.resolve(city)
         })
         .catch((error: AxiosError) => {
-            console.log('getCityError', error.response)
-
             return Promise.reject(error)
         })
 }
